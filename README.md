@@ -2,7 +2,7 @@
 
 *** Reproduction of EPIC allfilts
 
-`
+```
  Running Version 1.15 10/07/05 ...
 
  ****************************************************
@@ -24,7 +24,7 @@
  *  8 Hamming Band-pass filter                      *
  *  9 2.86-hr lowpass Lanczos cosine-squared filter *
  * 10 35-hr   lowpass Lanczos cosine-squared filter *
- `
+ ```
 
  file or pointer file 
 
