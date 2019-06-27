@@ -2,7 +2,7 @@
 
 *** Reproduction of EPIC allfilts
 
-`
+```
  Running Version 1.15 10/07/05 ...
 
  ****************************************************
@@ -24,7 +24,6 @@
  *  8 Hamming Band-pass filter                      *
  *  9 2.86-hr lowpass Lanczos cosine-squared filter *
  * 10 35-hr   lowpass Lanczos cosine-squared filter *
- `
 
  file or pointer file 
 
@@ -48,6 +47,7 @@ either as epic compatible time or as cf compatible time (flag)
  	* these are xarray / pandas wrappers
 
  - lanzcos 35hr lowpass filter
+ ```
 
 
 ################
