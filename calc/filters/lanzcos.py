@@ -4,6 +4,7 @@ Lanczos Filter
 
 121 point low pass lanczos filter.  Assumes hourly data
 
+modiefied matlab code from https://gist.github.com/janeshdev/5847127
 
 """
 
@@ -26,8 +27,8 @@ def low_pass_weights(window, cutoff):
     """
     order = ((window - 1) // 2 ) + 1
     nwts = 2 * order + 1
-    w = np.zeros([nwts])
-    n = nwts // 2
+    w = np.zeros([int(nwts)])
+    n = int(nwts) // 2
     w[n] = 2 * cutoff
     k = np.arange(1., n)
     sigma = np.sin(np.pi * k / n) * n / (np.pi * k)
@@ -54,7 +55,7 @@ def spectral_filtering(x, window):
     Nx = len(x)
     Cx = np.fft.fft(x)
     
-    Cx = Cx[0: np.floor(Nx / 2) +1 ]
+    Cx = Cx[0: int(np.floor(Nx / 2) +1) ]
         
     CxH = Cx * window
     filt = np.conj(CxH[Nx - len(CxH) :0:-1])
@@ -94,18 +95,3 @@ def lanzcos(data, dt, Cf=35. ):
         y = y[:-1]
     return (y)
 
-"""------------------------------------------------------------------------------------"""
-
-
-
-def test():
-
-    x = data['data']
-    t = data['time'] * 24. 
-    dt = (24. * 1.) / (1/data['dt'] )
-
-    y35=lanzcos(data,dt,35)
-    y2p86=lanzcos(data,dt,2.86)
-
-if __name__ == "__main__":
-    test() 
